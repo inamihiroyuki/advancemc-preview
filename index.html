@@ -416,7 +416,8 @@
 
     .staff-card p,
     .maker-card p,
-    .parts-copy p {
+    .customization-lead,
+    .custom-post-card p {
       margin: 0;
       color: var(--muted);
       font-size: 14px;
@@ -519,35 +520,68 @@
       background: var(--paper);
     }
 
-    .parts-layout {
+    .customization-head {
       display: grid;
-      grid-template-columns: minmax(290px, .8fr) minmax(0, 1.2fr);
-      gap: clamp(26px, 5vw, 56px);
-      align-items: center;
+      grid-template-columns: minmax(0, .78fr) minmax(280px, .6fr);
+      gap: clamp(24px, 5vw, 64px);
+      align-items: end;
+      margin-bottom: 30px;
     }
 
-    .parts-copy {
-      display: grid;
-      gap: 14px;
+    .customization-lead {
+      line-height: 1.9;
     }
 
-    .parts-partnerships {
+    .custom-posts {
       display: grid;
-      gap: 14px;
-      margin-top: 12px;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(260px, 1fr);
+      gap: 16px;
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+      padding: 4px 0 18px;
+      scroll-snap-type: inline mandatory;
     }
 
-    .parts-image {
-      min-height: 500px;
+    .custom-post-card {
+      scroll-snap-align: start;
       overflow: hidden;
+      min-width: 0;
+      color: var(--ink);
+      background: var(--white);
+      border: 1px solid var(--line);
       border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      box-shadow: 0 12px 28px rgba(26, 34, 37, .08);
     }
 
-    .parts-image img {
-      height: 100%;
+    .custom-post-card img {
+      aspect-ratio: 16 / 10;
       object-fit: cover;
-      object-position: center;
+    }
+
+    .custom-post-body {
+      padding: 18px;
+    }
+
+    .custom-post-meta {
+      display: block;
+      margin-bottom: 9px;
+      color: var(--red-dark);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .custom-post-card h3 {
+      margin-bottom: 10px;
+      font-size: 19px;
+    }
+
+    .custom-post-link {
+      display: inline-flex;
+      margin-top: 16px;
+      color: var(--red-dark);
+      font-size: 13px;
+      font-weight: 900;
     }
 
     .site-footer {
@@ -687,7 +721,7 @@
 
       .section-head,
       .story-grid,
-      .parts-layout,
+      .customization-head,
       .shop-info-layout,
       .footer-inner {
         grid-template-columns: 1fr;
@@ -703,7 +737,6 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .parts-image,
       .photo-large {
         min-height: 380px;
       }
@@ -781,8 +814,7 @@
       }
 
       .photo-large,
-      .photo-small,
-      .parts-image {
+      .photo-small {
         min-height: 300px;
       }
 
@@ -919,46 +951,54 @@
     </section>
 
     <section class="parts" id="parts">
-      <div class="wrap parts-layout">
-        <div class="parts-copy">
-          <span class="section-label">CUSTOMIZATION</span>
-          <h2>高性能パーツは、速く走るためだけのものではありません。</h2>
-          <p>
-            ブレーキディスク、エンジンオイル、ブレーキパッド、タイヤ、サスペンション。レース経験に裏打ちされた選定理由は、ツーリング中心の方にも価値があります。
-          </p>
-          <p>
-            もっと気持ちよく曲がる。安心して止まる。疲れにくく走れる。高性能パーツを、日常の楽しさへ翻訳して提案します。
-          </p>
-          <div class="parts-partnerships">
-            <a class="partnership-card is-sunstar" href="kunimi-commerce-sunstar.html">
-              <div>
-                <span>SPECIAL PARTNERSHIP</span>
-                <strong>サンスター製 オートバイパーツ</strong>
-                <p>国美コマース株式会社（サンスター）製ブレーキディスクの販売・取付を中心に、信頼できる制動まわりの選択を紹介します。</p>
-              </div>
-              <span class="partnership-arrow" aria-hidden="true">›</span>
-            </a>
-            <a class="partnership-card is-lubird" href="lubird-engine-oil.html">
-              <div>
-                <span>SPECIAL PARTNERSHIP</span>
-                <strong>ルバード（LUBIRD）エンジンオイル</strong>
-                <p>“Protect to Attack” をコンセプトに、エンジンを守ることを念頭に置いているためいかなるユーザーにも安心感を与えることができるブランドです。</p>
-              </div>
-              <span class="partnership-arrow" aria-hidden="true">›</span>
-            </a>
-            <a class="partnership-card is-dunlop" href="dunlop-motorcycle-tire.html">
-              <div>
-                <span>SPECIAL PARTNERSHIP</span>
-                <strong>ダンロップタイヤ</strong>
-                <p>ダンロップは、街乗りからツーリング、スポーツ走行、アドベンチャー、オフロードまで対応する、二輪タイヤのフルラインナップブランドです。</p>
-              </div>
-              <span class="partnership-arrow" aria-hidden="true">›</span>
-            </a>
+      <div class="wrap">
+        <div class="customization-head">
+          <div>
+            <span class="section-label">CUSTOMIZATION</span>
+            <h2>カスタム事例</h2>
           </div>
+          <p class="customization-lead">
+            ブレーキ、オイル、タイヤ、足まわり、外装まわりまで。実際の施工事例を通して、アドバンスMCがどんな視点で一台と向き合っているかを紹介します。
+          </p>
         </div>
-        <figure class="parts-image">
-          <img src="https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?auto=format&fit=crop&w=1300&q=80" alt="バイクの整備とパーツ">
-        </figure>
+        <div class="custom-posts" aria-label="カスタム事例の投稿一覧">
+          <article class="custom-post-card">
+            <img src="assets/kunimi-sunstar-banner.jpg" alt="サンスター製ブレーキディスクのカスタム事例">
+            <div class="custom-post-body">
+              <span class="custom-post-meta">BRAKE CUSTOM</span>
+              <h3>ブレーキディスク交換で、止まる安心感を整える。</h3>
+              <p>サンスター製パーツを中心に、走り方と車両状態に合わせた制動まわりを提案します。</p>
+              <a class="custom-post-link" href="#">事例を見る</a>
+            </div>
+          </article>
+          <article class="custom-post-card">
+            <img src="assets/lubird-engine-oil-banner.jpg" alt="ルバードエンジンオイルのメンテナンス事例">
+            <div class="custom-post-body">
+              <span class="custom-post-meta">OIL MAINTENANCE</span>
+              <h3>エンジンオイル選びを、日々の走りに合わせる。</h3>
+              <p>街乗り、ツーリング、スポーツ走行まで、使い方からオイル交換を考えます。</p>
+              <a class="custom-post-link" href="#">事例を見る</a>
+            </div>
+          </article>
+          <article class="custom-post-card">
+            <img src="assets/dunlop-tire-banner.jpg" alt="ダンロップタイヤ交換のカスタム事例">
+            <div class="custom-post-body">
+              <span class="custom-post-meta">TIRE SERVICE</span>
+              <h3>タイヤ交換で、曲がる楽しさと安心感を見直す。</h3>
+              <p>走る場所やペースに合わせて、タイヤの選び方から交換後の感触まで共有します。</p>
+              <a class="custom-post-link" href="#">事例を見る</a>
+            </div>
+          </article>
+          <article class="custom-post-card">
+            <img src="assets/hero-slide-4.jpg" alt="足まわりとツーリング前点検のカスタム事例">
+            <div class="custom-post-body">
+              <span class="custom-post-meta">TOURING SETUP</span>
+              <h3>ツーリング前に、足まわりと消耗品を点検する。</h3>
+              <p>長く気持ちよく走るために、整備とカスタムを一体で考える事例を紹介します。</p>
+              <a class="custom-post-link" href="#">事例を見る</a>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 

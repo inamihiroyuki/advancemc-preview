@@ -217,9 +217,9 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
-      width: min(1180px, calc(100% - 36px));
-      margin: 0 auto;
-      padding: 26px 0 0;
+      width: 100%;
+      margin: 0;
+      padding: 0 max(18px, calc((100% - 1180px) / 2)) 54px;
       background: var(--paper);
     }
 
@@ -468,12 +468,13 @@
     }
 
     .makers {
-      background: #252c2e;
-      color: var(--white);
+      padding-bottom: 34px;
+      background: var(--paper);
+      color: var(--ink);
     }
 
     .makers .section-copy {
-      color: rgba(255, 255, 255, .74);
+      color: var(--muted);
     }
 
     .maker-grid {
@@ -694,7 +695,7 @@
 
       .partnership-link {
         grid-template-columns: 1fr;
-        width: min(100% - 36px, 980px);
+        padding-inline: 18px;
       }
 
       .staff-grid,

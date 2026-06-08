@@ -223,6 +223,12 @@
       background: #252c2e;
     }
 
+    .partnership-item {
+      display: grid;
+      gap: 12px;
+      align-content: start;
+    }
+
     .partnership-card {
       position: relative;
       overflow: hidden;
@@ -235,6 +241,9 @@
       background: linear-gradient(135deg, #1f2528 0%, #313b3e 58%, #8f211c 100%);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
+      border: 0;
+      text-align: left;
+      cursor: pointer;
     }
 
     .partnership-card > * {
@@ -310,6 +319,53 @@
       font-size: 22px;
       font-weight: 900;
       line-height: 1;
+    }
+
+    .partnership-card[aria-expanded="true"] .partnership-arrow {
+      transform: rotate(90deg);
+    }
+
+    .partnership-detail {
+      overflow: hidden;
+      color: var(--ink);
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .16);
+    }
+
+    .partnership-detail[hidden] {
+      display: none;
+    }
+
+    .partnership-detail img {
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .partnership-detail-body {
+      display: grid;
+      gap: 10px;
+      padding: 18px;
+    }
+
+    .partnership-detail-body h3 {
+      margin-bottom: 0;
+      font-size: 18px;
+    }
+
+    .partnership-detail-body p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.75;
+    }
+
+    .partnership-detail-body a {
+      width: fit-content;
+      color: var(--red-dark);
+      font-size: 13px;
+      font-weight: 900;
     }
 
     main {
@@ -904,38 +960,78 @@
     </section>
 
     <div class="partnership-link">
-      <a class="partnership-card is-sunstar" href="kunimi-commerce-sunstar.html">
-        <div>
-          <span>SPECIAL PARTNERSHIP</span>
-          <strong>サンスター製 オートバイパーツ</strong>
-          <p>国美コマース株式会社（サンスター）製ブレーキディスクの販売・取付を中心に、信頼できる制動まわりの選択を紹介します。</p>
+      <div class="partnership-item">
+        <button class="partnership-card is-sunstar" type="button" aria-expanded="false" aria-controls="partnership-sunstar">
+          <div>
+            <span>SPECIAL PARTNERSHIP</span>
+            <strong>サンスター製 オートバイパーツ</strong>
+            <p>国美コマース株式会社（サンスター）製ブレーキディスクの販売・取付を中心に、信頼できる制動まわりの選択を紹介します。</p>
+          </div>
+          <span class="partnership-arrow" aria-hidden="true">›</span>
+        </button>
+        <div class="partnership-detail" id="partnership-sunstar" hidden>
+          <img src="assets/kunimi-sunstar-banner.jpg" alt="サンスター製ブレーキディスク">
+          <div class="partnership-detail-body">
+            <h3>制動まわりを、安心して楽しめる状態へ。</h3>
+            <p>街乗りやツーリングでも、ブレーキのタッチや安心感は走る楽しさに直結します。車両や使い方に合わせて、サンスター製ブレーキディスクの販売・取付を提案します。</p>
+            <a href="kunimi-commerce-sunstar.html">詳しく見る</a>
+          </div>
         </div>
-        <span class="partnership-arrow" aria-hidden="true">›</span>
-      </a>
-      <a class="partnership-card is-lubird" href="lubird-engine-oil.html">
-        <div>
-          <span>SPECIAL PARTNERSHIP</span>
-          <strong>ルバード（LUBIRD）エンジンオイル</strong>
-          <p>“Protect to Attack” をコンセプトに、エンジンを守ることを念頭に置いているためいかなるユーザーにも安心感を与えることができるブランドです。</p>
+      </div>
+      <div class="partnership-item">
+        <button class="partnership-card is-lubird" type="button" aria-expanded="false" aria-controls="partnership-lubird">
+          <div>
+            <span>SPECIAL PARTNERSHIP</span>
+            <strong>ルバード（LUBIRD）エンジンオイル</strong>
+            <p>“Protect to Attack” をコンセプトに、エンジンを守ることを念頭に置いているためいかなるユーザーにも安心感を与えることができるブランドです。</p>
+          </div>
+          <span class="partnership-arrow" aria-hidden="true">›</span>
+        </button>
+        <div class="partnership-detail" id="partnership-lubird" hidden>
+          <img src="assets/lubird-engine-oil-banner.jpg" alt="ルバードエンジンオイル">
+          <div class="partnership-detail-body">
+            <h3>エンジンを守ることから、走る気持ちよさを考える。</h3>
+            <p>日常の街乗りからスポーツ走行まで、使い方に合わせたオイル選びはバイクとの付き合い方を変えます。交換時期や走行環境も含めて相談できます。</p>
+            <a href="lubird-engine-oil.html">詳しく見る</a>
+          </div>
         </div>
-        <span class="partnership-arrow" aria-hidden="true">›</span>
-      </a>
-      <a class="partnership-card is-dunlop" href="dunlop-motorcycle-tire.html">
-        <div>
-          <span>SPECIAL PARTNERSHIP</span>
-          <strong>ダンロップタイヤ</strong>
-          <p>ダンロップは、街乗りからツーリング、スポーツ走行、アドベンチャー、オフロードまで対応する、二輪タイヤのフルラインナップブランドです。</p>
+      </div>
+      <div class="partnership-item">
+        <button class="partnership-card is-dunlop" type="button" aria-expanded="false" aria-controls="partnership-dunlop">
+          <div>
+            <span>SPECIAL PARTNERSHIP</span>
+            <strong>ダンロップタイヤ</strong>
+            <p>ダンロップは、街乗りからツーリング、スポーツ走行、アドベンチャー、オフロードまで対応する、二輪タイヤのフルラインナップブランドです。</p>
+          </div>
+          <span class="partnership-arrow" aria-hidden="true">›</span>
+        </button>
+        <div class="partnership-detail" id="partnership-dunlop" hidden>
+          <img src="assets/dunlop-tire-banner.jpg" alt="ダンロップ二輪タイヤ">
+          <div class="partnership-detail-body">
+            <h3>走り方に合わせて、タイヤの選択肢を広げる。</h3>
+            <p>ツーリング、スポーツ走行、アドベンチャー、オフロードまで、タイヤは一台の性格を大きく左右します。走る場所とペースに合わせて選びます。</p>
+            <a href="dunlop-motorcycle-tire.html">詳しく見る</a>
+          </div>
         </div>
-        <span class="partnership-arrow" aria-hidden="true">›</span>
-      </a>
-      <a class="partnership-card is-ogk" href="ogk-kabuto.html">
-        <div>
-          <span>SPECIAL PARTNERSHIP</span>
-          <strong>OGK KABUTO</strong>
-          <p>日本人に合うかぶり心地と、レースにも対応する安全・空力性能を両立した国産ヘルメットブランドです。街乗りからツーリング、スポーツ走行まで、快適で安心なライディングを支えます。</p>
+      </div>
+      <div class="partnership-item">
+        <button class="partnership-card is-ogk" type="button" aria-expanded="false" aria-controls="partnership-ogk">
+          <div>
+            <span>SPECIAL PARTNERSHIP</span>
+            <strong>OGK KABUTO</strong>
+            <p>日本人に合うかぶり心地と、レースにも対応する安全・空力性能を両立した国産ヘルメットブランドです。街乗りからツーリング、スポーツ走行まで、快適で安心なライディングを支えます。</p>
+          </div>
+          <span class="partnership-arrow" aria-hidden="true">›</span>
+        </button>
+        <div class="partnership-detail" id="partnership-ogk" hidden>
+          <img src="assets/hero-slide-3.jpg" alt="ヘルメットとライディング用品の提案">
+          <div class="partnership-detail-body">
+            <h3>かぶり心地と安心感を、ライディングの土台に。</h3>
+            <p>ヘルメットは安全性だけでなく、長時間の快適さや視界、空力も大切です。街乗りからスポーツ走行まで、使い方に合う選択を支えます。</p>
+            <a href="ogk-kabuto.html">詳しく見る</a>
+          </div>
         </div>
-        <span class="partnership-arrow" aria-hidden="true">›</span>
-      </a>
+      </div>
     </div>
 
     <section class="story" id="concept">
@@ -1133,6 +1229,18 @@
         heroSlides[heroSlideIndex].classList.add("is-active");
       }, 6000);
     }
+
+    const partnershipButtons = document.querySelectorAll(".partnership-card[aria-controls]");
+
+    partnershipButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const panel = document.getElementById(button.getAttribute("aria-controls"));
+        const willOpen = button.getAttribute("aria-expanded") !== "true";
+
+        button.setAttribute("aria-expanded", String(willOpen));
+        panel.hidden = !willOpen;
+      });
+    });
   </script>
 </body>
 </html>

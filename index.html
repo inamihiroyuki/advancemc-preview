@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>アドバンスMC | レースの現場を知るスタッフと、楽しいオートバイライフを。</title>
+  <title>アドバンスMC | レースの現場を知るスタッフと、笑顔のオートバイライフを。</title>
   <meta name="description" content="栃木県宇都宮市のバイクショップ、アドバンスMCのトップページデザイン案。レース経験を日常のバイクライフへつなげる、相談しやすい地域のショップです。">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23c9362e'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-family='Arial,sans-serif' font-size='18' font-weight='700' fill='white'%3EMC%3C/text%3E%3C/svg%3E">
   <style>
@@ -407,18 +407,6 @@
       font-weight: 600;
     }
 
-    .statement {
-      margin-top: 28px;
-      padding: 28px;
-      border-left: 6px solid var(--red);
-      background: var(--white);
-      border-radius: var(--radius);
-      box-shadow: 0 14px 30px rgba(26, 34, 37, .08);
-      font-size: clamp(18px, 2.4vw, 24px);
-      line-height: 1.65;
-      font-weight: 900;
-    }
-
     h3 {
       margin: 0 0 14px;
       font-size: 22px;
@@ -561,51 +549,72 @@
       object-position: center;
     }
 
-    .cta {
-      padding: clamp(58px, 8vw, 86px) 0;
-      color: var(--white);
-      background: var(--red-dark);
-    }
-
-    .cta-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 32px;
-    }
-
-    .cta h2 {
-      max-width: 720px;
-    }
-
-    .cta p {
-      margin: 16px 0 0;
+    .site-footer {
+      padding: 54px 0 30px;
       color: rgba(255, 255, 255, .82);
+      background: #141819;
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: minmax(220px, .8fr) minmax(0, 1.2fr);
+      gap: clamp(28px, 6vw, 72px);
+      align-items: start;
+    }
+
+    .footer-logo {
+      width: 220px;
+      margin-bottom: 18px;
+    }
+
+    .footer-copy {
+      margin: 0;
+      font-size: 13px;
       font-weight: 700;
+      line-height: 1.8;
     }
 
-    .phone-box {
-      min-width: 270px;
-      padding: 24px;
-      color: var(--ink);
-      background: var(--white);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+    .footer-info {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px 24px;
+      margin: 0;
     }
 
-    .phone-box span {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--muted);
+    .footer-info div {
+      display: grid;
+      gap: 5px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, .12);
+    }
+
+    .footer-info dt {
+      color: rgba(255, 255, 255, .48);
       font-size: 12px;
       font-weight: 900;
     }
 
-    .phone-box strong {
-      display: block;
-      font-size: 30px;
-      line-height: 1.2;
-      letter-spacing: 0;
+    .footer-info dd {
+      margin: 0;
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.65;
+    }
+
+    .footer-info a {
+      color: var(--white);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .copyright {
+      margin: 34px 0 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, .12);
+      color: rgba(255, 255, 255, .44);
+      font-size: 12px;
+      font-weight: 700;
     }
 
     .shop-info {
@@ -679,7 +688,7 @@
       .story-grid,
       .parts-layout,
       .shop-info-layout,
-      .cta-inner {
+      .footer-inner {
         grid-template-columns: 1fr;
       }
 
@@ -698,8 +707,8 @@
         min-height: 380px;
       }
 
-      .cta-inner {
-        display: grid;
+      .footer-info {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -811,10 +820,47 @@
         <img class="hero-slide" src="assets/hero-slide-5.jpg" alt="">
       </div>
       <div class="hero-inner">
-        <h1>レースの現場を知る<br><span class="keep">スタッフと、楽しい</span><br>オートバイライフを。</h1>
+        <h1>レースの現場を知る<br><span class="keep">スタッフと、笑顔の</span><br>オートバイライフを。</h1>
         <p class="hero-lead">
-          アドバンスMCは、速さだけを語る店ではありません。サーキットで培った視点を、街乗り、ツーリング、カスタム、日々の整備へつなげる地域のバイクショップです。
+          アドンバスMCは、スズキ、MVアグスタ、ロイヤルエンフィールドの新車を取り扱いながら、各種整備、車検、カスタムまで幅広く対応する宇都宮のバイクショップです。サーキットで培った視点を、街乗り、ツーリング、日々のメンテナンスへとつなげ、お客様一人ひとりのオートバイライフを支えます。
         </p>
+      </div>
+    </section>
+
+    <section class="makers" id="makers">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="section-label">AUTHORIZED BRANDS</span>
+            <h2>新車取扱いメーカー</h2>
+          </div>
+        </div>
+        <div class="maker-grid">
+          <article class="maker-card">
+            <img src="assets/maker-suzuki.jpg" alt="SUZUKI GSX-8F">
+            <div>
+              <span class="maker-tag">SUZUKI</span>
+              <h3>日常と走りのバランス</h3>
+              <p>街乗りからツーリング、スポーツ走行まで、長く楽しめる一台選びを支えます。</p>
+            </div>
+          </article>
+          <article class="maker-card">
+            <img src="assets/maker-mv-agusta.png" alt="MV AGUSTA Superveloce">
+            <div>
+              <span class="maker-tag">MV AGUSTA</span>
+              <h3>造形と熱量を味わう</h3>
+              <p>所有する喜び、眺める楽しさ、走らせる高揚感まで含めた体験として紹介します。</p>
+            </div>
+          </article>
+          <article class="maker-card">
+            <img src="assets/maker-royal-enfield.jpg" alt="ROYAL ENFIELD Continental GT 650">
+            <div>
+              <span class="maker-tag">ROYAL ENFIELD</span>
+              <h3>急がない楽しさ</h3>
+              <p>景色、音、鼓動を味わいながら、バイクと付き合う時間を大切にする提案へ。</p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -867,11 +913,6 @@
           <p>
             レースやサーキットの現場を知るスタッフが、ブレーキ、タイヤ、オイル、足まわりを見る。その視点は、限界まで攻めるためだけではなく、街乗りやツーリングを気持ちよく、安心して続けるためにも生きています。
           </p>
-          <div class="statement">
-            本格的な経験がある。<br>
-            でも、楽しく相談できる。<br>
-            そんな北関東のバイクショップへ。
-          </div>
         </div>
       </div>
     </section>
@@ -913,46 +954,6 @@
               <span class="staff-role">メカニック</span>
               <h3>小暮</h3>
               <p>ブレーキ、タイヤ、オイル、足まわりなど、乗り味に関わる部分を丁寧に確認。相談しやすい説明を重視します。</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="makers" id="makers">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <span class="section-label">AUTHORIZED BRANDS</span>
-            <h2>新車取扱いメーカー</h2>
-          </div>
-          <p class="section-copy">
-            新車取扱メーカーページでは、スペック情報だけで終わらせません。アドバンスMCが感じる魅力、付き合い方、楽しみ方を伝えます。
-          </p>
-        </div>
-        <div class="maker-grid">
-          <article class="maker-card">
-            <img src="assets/maker-suzuki.jpg" alt="SUZUKI GSX-8F">
-            <div>
-              <span class="maker-tag">SUZUKI</span>
-              <h3>日常と走りのバランス</h3>
-              <p>街乗りからツーリング、スポーツ走行まで、長く楽しめる一台選びを支えます。</p>
-            </div>
-          </article>
-          <article class="maker-card">
-            <img src="assets/maker-mv-agusta.png" alt="MV AGUSTA Superveloce">
-            <div>
-              <span class="maker-tag">MV AGUSTA</span>
-              <h3>造形と熱量を味わう</h3>
-              <p>所有する喜び、眺める楽しさ、走らせる高揚感まで含めた体験として紹介します。</p>
-            </div>
-          </article>
-          <article class="maker-card">
-            <img src="assets/maker-royal-enfield.jpg" alt="ROYAL ENFIELD Continental GT 650">
-            <div>
-              <span class="maker-tag">ROYAL ENFIELD</span>
-              <h3>急がない楽しさ</h3>
-              <p>景色、音、鼓動を味わいながら、バイクと付き合う時間を大切にする提案へ。</p>
             </div>
           </article>
         </div>
@@ -1047,20 +1048,47 @@
       </div>
     </section>
 
-    <section class="cta" aria-label="電話相談">
-      <div class="wrap cta-inner">
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
         <div>
-          <h2>まずは、今のバイクライフの話から。</h2>
-          <p>
-            車両、整備、用品、カスタム、ツーリング前の不安まで。来店前の確認は電話でどうぞ。
+          <img class="footer-logo" src="assets/advance-mc-logo.svg" alt="ADVANCE MC">
+          <p class="footer-copy">
+            レースの現場を知るスタッフと、笑顔のオートバイライフを。
           </p>
         </div>
-        <a class="phone-box" href="tel:0286125701">
-          <span>PHONE</span>
-          <strong>028-612-5701</strong>
-        </a>
+        <dl class="footer-info">
+          <div>
+            <dt>店名</dt>
+            <dd>アドバンスMC</dd>
+          </div>
+          <div>
+            <dt>住所</dt>
+            <dd>〒321-0145<br>栃木県宇都宮市茂原1丁目1-16</dd>
+          </div>
+          <div>
+            <dt>電話番号</dt>
+            <dd><a href="tel:0286125701">028-612-5701</a></dd>
+          </div>
+          <div>
+            <dt>営業時間</dt>
+            <dd>9:00～18:00</dd>
+          </div>
+          <div>
+            <dt>定休日</dt>
+            <dd>水曜日、第1日曜日、第3火曜日、イベント開催日</dd>
+          </div>
+          <div>
+            <dt>駐車場</dt>
+            <dd>あり</dd>
+          </div>
+          <div>
+            <dt>地図</dt>
+            <dd><a href="https://www.google.com/maps/search/?api=1&query=36.4797133017,139.871395081" target="_blank" rel="noopener">Googleマップで見る</a></dd>
+          </div>
+        </dl>
       </div>
-    </section>
+      <p class="wrap copyright">© ADVANCE MC</p>
+    </footer>
   </main>
 
   <script>

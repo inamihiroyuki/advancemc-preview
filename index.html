@@ -215,7 +215,7 @@
       position: relative;
       z-index: 4;
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 16px;
       width: 100%;
       margin: 0;
@@ -283,6 +283,12 @@
       background:
         linear-gradient(135deg, rgba(18, 22, 23, .96) 0%, rgba(62, 71, 75, .9) 58%, rgba(143, 33, 28, .7) 120%),
         #1b2022;
+    }
+
+    .partnership-card.is-ek {
+      background:
+        linear-gradient(135deg, rgba(18, 22, 23, .96) 0%, rgba(49, 59, 62, .92) 58%, rgba(231, 184, 75, .68) 130%),
+        #191f20;
     }
 
     .partnership-card span {
@@ -1029,6 +1035,24 @@
             <h3>かぶり心地と安心感を、ライディングの土台に。</h3>
             <p>ヘルメットは安全性だけでなく、長時間の快適さや視界、空力も大切です。街乗りからスポーツ走行まで、使い方に合う選択を支えます。</p>
             <a href="ogk-kabuto.html">詳しく見る</a>
+          </div>
+        </div>
+      </div>
+      <div class="partnership-item">
+        <button class="partnership-card is-ek" type="button" aria-expanded="false" aria-controls="partnership-ek">
+          <div>
+            <span>SPECIAL PARTNERSHIP</span>
+            <strong>EKチェーン</strong>
+            <p>シールチェーンのパイオニアとして知られる国産ドライブチェーンブランドです。街乗りからツーリング、スポーツ走行まで、駆動まわりの安心感と気持ちよい走りを支えます。</p>
+          </div>
+          <span class="partnership-arrow" aria-hidden="true">›</span>
+        </button>
+        <div class="partnership-detail" id="partnership-ek" hidden>
+          <img src="assets/hero-slide-4.jpg" alt="ドライブチェーンと駆動まわりの整備提案">
+          <div class="partnership-detail-body">
+            <h3>駆動まわりを整えて、走りの気持ちよさを保つ。</h3>
+            <p>チェーンはエンジンの力を後輪へ伝える大切な部品です。摩耗や張り、給油状態まで含めて確認し、車両や走り方に合うチェーン選びと交換を提案します。</p>
+            <a href="ek-chain.html">詳しく見る</a>
           </div>
         </div>
       </div>

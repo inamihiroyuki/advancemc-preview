@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 508" role="img" aria-labelledby="title desc">
+  <title id="title">ADVANCE MC logo</title>
+  <desc id="desc">Red ADVANCE MC wordmark in a red oval on a dark background.</desc>
+  <rect width="2048" height="508" fill="#000"/>
+  <ellipse cx="1024" cy="254" rx="1007" ry="245" fill="#211512" stroke="#ed1c18" stroke-width="7"/>
+  <g transform="skewX(-7)">
+    <text x="104" y="346"
+      font-family="Georgia, 'Times New Roman', serif"
+      font-size="250"
+      font-style="italic"
+      font-weight="900"
+      textLength="1800"
+      lengthAdjust="spacingAndGlyphs"
+      fill="#ed1c18"
+      stroke="#fff"
+      stroke-width="9"
+      paint-order="stroke fill">ADVANCE MC</text>
+    <text x="104" y="346"
+      font-family="Georgia, 'Times New Roman', serif"
+      font-size="250"
+      font-style="italic"
+      font-weight="900"
+      textLength="1800"
+      lengthAdjust="spacingAndGlyphs"
+      fill="none"
+      stroke="#151010"
+      stroke-width="3">ADVANCE MC</text>
+  </g>
+</svg>

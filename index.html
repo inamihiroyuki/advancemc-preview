@@ -6,896 +6,7 @@
   <title>アドバンスMC | レースの現場を知るスタッフと、笑顔のオートバイライフを。</title>
   <meta name="description" content="栃木県宇都宮市のバイクショップ、アドバンスMCのトップページデザイン案。レース経験を日常のバイクライフへつなげる、相談しやすい地域のショップです。">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23c9362e'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-family='Arial,sans-serif' font-size='18' font-weight='700' fill='white'%3EMC%3C/text%3E%3C/svg%3E">
-  <style>
-    :root {
-      --ink: #1f2528;
-      --muted: #637077;
-      --line: #d9dedc;
-      --paper: #fbfaf6;
-      --white: #fff;
-      --red: #c9362e;
-      --red-dark: #8f211c;
-      --green: #2f6f65;
-      --yellow: #e7b84b;
-      --blue: #2e5e8c;
-      --shadow: 0 20px 50px rgba(26, 34, 37, .16);
-      --radius: 8px;
-      font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", system-ui, sans-serif;
-      color: var(--ink);
-      background: var(--paper);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--paper);
-      line-height: 1.8;
-    }
-
-    img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .site-header {
-      position: fixed;
-      z-index: 20;
-      top: 0;
-      left: 0;
-      right: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
-      min-height: 72px;
-      padding: 14px clamp(18px, 4vw, 54px);
-      color: var(--white);
-      background: rgba(22, 27, 28, .72);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(255, 255, 255, .12);
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      font-weight: 800;
-      letter-spacing: 0;
-      white-space: nowrap;
-    }
-
-    .brand-logo {
-      width: clamp(172px, 18vw, 260px);
-      height: auto;
-      max-height: 52px;
-      object-fit: contain;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: clamp(14px, 2.2vw, 28px);
-      font-size: 13px;
-      font-weight: 700;
-      color: rgba(255, 255, 255, .9);
-    }
-
-    .nav .tel {
-      padding: 8px 14px;
-      color: var(--ink);
-      background: var(--white);
-      border-radius: 999px;
-      line-height: 1.2;
-    }
-
-    .hero {
-      position: relative;
-      min-height: 92vh;
-      display: grid;
-      align-items: end;
-      overflow: hidden;
-      color: var(--white);
-      background: #1b2022;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(90deg, rgba(15, 18, 19, .88) 0%, rgba(15, 18, 19, .58) 46%, rgba(15, 18, 19, .22) 100%),
-        linear-gradient(0deg, rgba(15, 18, 19, .84) 0%, rgba(15, 18, 19, .04) 42%);
-      z-index: 1;
-    }
-
-    .hero-slideshow {
-      position: absolute;
-      inset: 0;
-    }
-
-    .hero-slide {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 34%;
-      filter: saturate(.96) contrast(1.03);
-      opacity: 0;
-      transform: scale(1.02);
-      transition: opacity 1.2s ease, transform 7s ease;
-    }
-
-    .hero-slide:nth-child(2) {
-      object-position: center 25%;
-    }
-
-    .hero-slide:nth-child(3) {
-      object-position: center center;
-    }
-
-    .hero-slide:nth-child(4) {
-      object-position: center center;
-    }
-
-    .hero-slide:nth-child(5) {
-      object-position: center center;
-    }
-
-    .hero-slide.is-active {
-      opacity: 1;
-      transform: scale(1.05);
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 2;
-      width: min(1180px, calc(100% - 36px));
-      margin: 0 auto;
-      padding: 124px 0 88px;
-    }
-
-    h1 {
-      max-width: 1040px;
-      margin: 0;
-      font-size: clamp(36px, 6vw, 72px);
-      line-height: 1.08;
-      letter-spacing: 0;
-      font-weight: 900;
-    }
-
-    .keep {
-      white-space: nowrap;
-    }
-
-    .hero-lead {
-      max-width: 690px;
-      margin: 26px 0 0;
-      color: rgba(255, 255, 255, .9);
-      font-size: clamp(16px, 2vw, 20px);
-      font-weight: 600;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 12px 18px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      font-size: 14px;
-      font-weight: 800;
-      line-height: 1.3;
-    }
-
-    .button-primary {
-      color: var(--white);
-      background: var(--red);
-      box-shadow: 0 12px 28px rgba(159, 38, 31, .35);
-    }
-
-    .button-secondary {
-      color: var(--white);
-      border-color: rgba(255, 255, 255, .55);
-      background: rgba(255, 255, 255, .08);
-    }
-
-    .partnership-link {
-      position: relative;
-      z-index: 4;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 16px;
-      width: 100%;
-      margin: 0;
-      padding: 34px max(18px, calc((100% - 1180px) / 2)) 54px;
-      background: #252c2e;
-    }
-
-    .partnership-item {
-      display: grid;
-      gap: 12px;
-      align-content: start;
-    }
-
-    .partnership-card {
-      position: relative;
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 18px;
-      align-items: center;
-      padding: 22px;
-      color: var(--white);
-      background: linear-gradient(135deg, #1f2528 0%, #313b3e 58%, #8f211c 100%);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      border: 0;
-      text-align: left;
-      cursor: pointer;
-    }
-
-    .partnership-card > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .partnership-card.is-sunstar {
-      background:
-        linear-gradient(90deg, rgba(18, 22, 23, .92) 0%, rgba(18, 22, 23, .74) 54%, rgba(143, 33, 28, .48) 100%),
-        url("assets/kunimi-sunstar-banner.jpg") center / cover;
-    }
-
-    .partnership-card:nth-child(2) {
-      background: linear-gradient(135deg, #1f2528 0%, #2f6f65 66%, #2e5e8c 100%);
-    }
-
-    .partnership-card:nth-child(3) {
-      background: linear-gradient(135deg, #1f2528 0%, #34464a 58%, #e7b84b 140%);
-    }
-
-    .partnership-card.is-lubird {
-      background:
-        linear-gradient(90deg, rgba(18, 22, 23, .92) 0%, rgba(18, 22, 23, .74) 58%, rgba(47, 111, 101, .44) 100%),
-        url("assets/lubird-engine-oil-banner.jpg") right center / auto 118% no-repeat,
-        #172020;
-    }
-
-    .partnership-card.is-dunlop {
-      background:
-        linear-gradient(90deg, rgba(18, 22, 23, .94) 0%, rgba(18, 22, 23, .78) 58%, rgba(231, 184, 75, .46) 100%),
-        url("assets/dunlop-tire-banner.jpg") right center / auto 118% no-repeat,
-        #171c1d;
-    }
-
-    .partnership-card.is-ogk {
-      background:
-        linear-gradient(135deg, rgba(18, 22, 23, .96) 0%, rgba(62, 71, 75, .9) 58%, rgba(143, 33, 28, .7) 120%),
-        #1b2022;
-    }
-
-    .partnership-card.is-ek {
-      background:
-        linear-gradient(135deg, rgba(18, 22, 23, .96) 0%, rgba(49, 59, 62, .92) 58%, rgba(231, 184, 75, .68) 130%),
-        #191f20;
-    }
-
-    .partnership-card span {
-      display: inline-flex;
-      margin-bottom: 8px;
-      color: var(--yellow);
-      font-size: 12px;
-      font-weight: 900;
-    }
-
-    .partnership-card strong {
-      display: block;
-      margin-bottom: 4px;
-      font-size: clamp(18px, 2vw, 24px);
-      line-height: 1.35;
-    }
-
-    .partnership-card p {
-      margin: 0;
-      color: rgba(255, 255, 255, .78);
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .partnership-card .partnership-arrow {
-      display: grid;
-      place-items: center;
-      width: 48px;
-      height: 48px;
-      margin-bottom: 0;
-      color: var(--ink);
-      background: var(--white);
-      border-radius: 50%;
-      font-size: 22px;
-      font-weight: 900;
-      line-height: 1;
-    }
-
-    .partnership-card[aria-expanded="true"] .partnership-arrow {
-      transform: rotate(90deg);
-    }
-
-    .partnership-detail {
-      overflow: hidden;
-      color: var(--ink);
-      background: var(--white);
-      border-radius: var(--radius);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, .16);
-    }
-
-    .partnership-detail[hidden] {
-      display: none;
-    }
-
-    .partnership-detail img {
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-    }
-
-    .partnership-detail-body {
-      display: grid;
-      gap: 10px;
-      padding: 18px;
-    }
-
-    .partnership-detail-body h3 {
-      margin-bottom: 0;
-      font-size: 18px;
-    }
-
-    .partnership-detail-body p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 1.75;
-    }
-
-    .partnership-detail-body a {
-      width: fit-content;
-      color: var(--red-dark);
-      font-size: 13px;
-      font-weight: 900;
-    }
-
-    main {
-      overflow: hidden;
-    }
-
-    section {
-      padding: clamp(72px, 10vw, 118px) 0;
-    }
-
-    .wrap {
-      width: min(1180px, calc(100% - 36px));
-      margin: 0 auto;
-    }
-
-    .section-head {
-      display: grid;
-      grid-template-columns: minmax(0, .95fr) minmax(280px, .75fr);
-      gap: clamp(28px, 6vw, 74px);
-      align-items: end;
-      margin-bottom: 42px;
-    }
-
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 12px;
-      color: var(--red);
-      font-size: 12px;
-      font-weight: 900;
-    }
-
-    .section-label::before {
-      content: "";
-      width: 28px;
-      height: 3px;
-      background: currentColor;
-    }
-
-    h2 {
-      margin: 0;
-      font-size: clamp(28px, 4vw, 48px);
-      line-height: 1.25;
-      letter-spacing: 0;
-    }
-
-    .section-copy {
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
-      font-weight: 600;
-    }
-
-    .story {
-      background: var(--paper);
-    }
-
-    .story-grid {
-      display: grid;
-      grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
-      gap: clamp(26px, 5vw, 62px);
-      align-items: center;
-    }
-
-    .photo-stack {
-      min-height: 460px;
-    }
-
-    .photo {
-      position: relative;
-      overflow: hidden;
-      margin: 0;
-      height: 100%;
-      border-radius: var(--radius);
-      background: #d7d5ce;
-      box-shadow: 0 16px 36px rgba(26, 34, 37, .12);
-    }
-
-    .photo img {
-      position: absolute;
-      inset: 0;
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .photo-large {
-      min-height: 460px;
-    }
-
-    .story-body {
-      padding-left: clamp(0px, 3vw, 22px);
-    }
-
-    .story-body p {
-      margin: 0 0 18px;
-      font-weight: 600;
-    }
-
-    h3 {
-      margin: 0 0 14px;
-      font-size: 22px;
-      line-height: 1.35;
-      letter-spacing: 0;
-    }
-
-    .staff-card p,
-    .staff-card ul,
-    .maker-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .staff {
-      background: var(--white);
-    }
-
-    .staff-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .staff-card {
-      overflow: hidden;
-      border-radius: var(--radius);
-      background: #f4f2eb;
-      border: 1px solid var(--line);
-    }
-
-    .staff-photo {
-      aspect-ratio: 4 / 3;
-      background: #d6d2ca;
-    }
-
-    .staff-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .staff-profile {
-      padding: 24px;
-    }
-
-    .staff-card ul {
-      padding-left: 1.2em;
-    }
-
-    .staff-role {
-      display: inline-flex;
-      margin-bottom: 10px;
-      padding: 4px 9px;
-      color: var(--white);
-      background: var(--red);
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 900;
-    }
-
-    .makers {
-      padding-bottom: 34px;
-      background: var(--paper);
-      color: var(--ink);
-    }
-
-    .makers .section-copy {
-      color: var(--muted);
-    }
-
-    .maker-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .maker-card {
-      min-height: 250px;
-      overflow: hidden;
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: 0 12px 28px rgba(26, 34, 37, .08);
-    }
-
-    .maker-card img {
-      height: 136px;
-      object-fit: cover;
-    }
-
-    .maker-card div {
-      padding: 18px;
-    }
-
-    .maker-card p {
-      color: var(--muted);
-    }
-
-    .maker-tag {
-      display: block;
-      margin-bottom: 12px;
-      padding-bottom: 10px;
-      color: var(--red-dark);
-      border-bottom: 1px solid var(--line);
-      font-size: 14px;
-      font-weight: 900;
-    }
-
-    .parts {
-      background: var(--paper);
-    }
-
-    .customization-head {
-      margin-bottom: 30px;
-    }
-
-    .custom-link-panel {
-      position: relative;
-      overflow: hidden;
-      display: block;
-      min-height: 360px;
-      color: var(--white);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .custom-link-panel img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 54%;
-    }
-
-    .custom-link-panel::after {
-      position: absolute;
-      inset: 0;
-      content: "";
-      background: linear-gradient(90deg, rgba(18, 22, 23, .82) 0%, rgba(18, 22, 23, .45) 48%, rgba(18, 22, 23, .16) 100%);
-    }
-
-    .custom-link-content {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      align-content: end;
-      max-width: 520px;
-      min-height: 360px;
-      padding: clamp(26px, 5vw, 48px);
-    }
-
-    .custom-link-content strong {
-      display: block;
-      font-size: clamp(28px, 4vw, 46px);
-      line-height: 1.25;
-    }
-
-    .custom-link-content p {
-      margin: 18px 0 0;
-      color: rgba(255, 255, 255, .84);
-      font-size: 15px;
-      font-weight: 700;
-      line-height: 1.9;
-    }
-
-    .custom-link-content span {
-      display: inline-flex;
-      align-items: center;
-      width: fit-content;
-      margin-top: 20px;
-      padding: 12px 18px;
-      color: var(--ink);
-      background: var(--white);
-      border-radius: var(--radius);
-      font-size: 14px;
-      font-weight: 900;
-    }
-
-    .site-footer {
-      padding: 54px 0 30px;
-      color: rgba(255, 255, 255, .82);
-      background: #141819;
-    }
-
-    .footer-inner {
-      display: grid;
-      grid-template-columns: minmax(220px, .8fr) minmax(0, 1.2fr);
-      gap: clamp(28px, 6vw, 72px);
-      align-items: start;
-    }
-
-    .footer-logo {
-      width: 220px;
-      margin-bottom: 18px;
-    }
-
-    .footer-copy {
-      margin: 0;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 1.8;
-    }
-
-    .footer-info {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px 24px;
-      margin: 0;
-    }
-
-    .footer-info div {
-      display: grid;
-      gap: 5px;
-      padding-bottom: 14px;
-      border-bottom: 1px solid rgba(255, 255, 255, .12);
-    }
-
-    .footer-info dt {
-      color: rgba(255, 255, 255, .48);
-      font-size: 12px;
-      font-weight: 900;
-    }
-
-    .footer-info dd {
-      margin: 0;
-      color: var(--white);
-      font-size: 14px;
-      font-weight: 800;
-      line-height: 1.65;
-    }
-
-    .footer-info a {
-      color: var(--white);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .copyright {
-      margin: 34px 0 0;
-      padding-top: 18px;
-      border-top: 1px solid rgba(255, 255, 255, .12);
-      color: rgba(255, 255, 255, .44);
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .shop-info {
-      background: var(--white);
-    }
-
-    .shop-info-layout {
-      display: grid;
-      grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr);
-      gap: clamp(28px, 5vw, 62px);
-      align-items: start;
-    }
-
-    .info-lead {
-      margin: 18px 0 0;
-      color: var(--muted);
-      font-weight: 700;
-    }
-
-    .info-table {
-      margin: 0;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--paper);
-    }
-
-    .info-row {
-      display: grid;
-      grid-template-columns: 132px minmax(0, 1fr);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .info-row:last-child {
-      border-bottom: 0;
-    }
-
-    .info-row dt,
-    .info-row dd {
-      margin: 0;
-      padding: 17px 20px;
-    }
-
-    .info-row dt {
-      color: var(--muted);
-      background: #eef1ef;
-      font-size: 13px;
-      font-weight: 900;
-    }
-
-    .info-row dd {
-      font-weight: 800;
-    }
-
-    .info-row a {
-      color: var(--red-dark);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    @media (max-width: 920px) {
-      .site-header {
-        position: absolute;
-      }
-
-      .nav a:not(.tel) {
-        display: none;
-      }
-
-      .section-head,
-      .story-grid,
-      .customization-head,
-      .shop-info-layout,
-      .footer-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .partnership-link {
-        grid-template-columns: 1fr;
-        padding-inline: 18px;
-      }
-
-      .staff-grid,
-      .maker-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .photo-large {
-        min-height: 380px;
-      }
-
-      .footer-info {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 620px) {
-      .site-header {
-        min-height: 66px;
-        padding: 12px 16px;
-      }
-
-      .brand-logo {
-        width: 168px;
-        max-height: 42px;
-      }
-
-      .nav .tel {
-        padding: 8px 10px;
-        font-size: 12px;
-      }
-
-      .hero {
-        min-height: 86vh;
-      }
-
-      .hero-inner {
-        width: min(100% - 30px, 1180px);
-        padding-bottom: 58px;
-      }
-
-      h1 {
-        font-size: 34px;
-      }
-
-      .hero-slide {
-        object-position: center top;
-      }
-
-      .hero-slide:nth-child(2) {
-        object-position: center top;
-      }
-
-      .hero-slide:nth-child(3) {
-        object-position: center center;
-      }
-
-      .hero-slide:nth-child(4) {
-        object-position: center center;
-      }
-
-      .hero-slide:nth-child(5) {
-        object-position: center center;
-      }
-
-      .staff-grid,
-      .maker-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .partnership-card {
-        padding: 22px;
-      }
-
-      .partnership-arrow {
-        width: 42px;
-        height: 42px;
-      }
-
-      .photo-stack,
-      .photo-large {
-        min-height: 300px;
-      }
-
-      .info-row {
-        grid-template-columns: 1fr;
-      }
-
-      .info-row dt,
-      .info-row dd {
-        padding: 13px 16px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
   <header class="site-header">
@@ -903,10 +14,11 @@
       <img class="brand-logo" src="assets/advance-mc-logo.svg" alt="ADVANCE MC">
     </a>
     <nav class="nav" aria-label="主要ナビゲーション">
+      <a href="#news">お知らせ</a>
       <a href="#concept">アドバンスMCについて</a>
-      <a href="#staff">スタッフ</a>
       <a href="#makers">新車取扱メーカー</a>
-      <a href="#parts">カスタム</a>
+      <a href="#parts">カスタム・整備・修理</a>
+      <a href="#race">レース活動</a>
       <a class="tel" href="tel:0286125701">お電話はこちら</a>
     </nav>
   </header>
@@ -921,10 +33,39 @@
         <img class="hero-slide" src="assets/hero-slide-5.jpg" alt="">
       </div>
       <div class="hero-inner">
-        <h1>レースの現場を知る<br><span class="keep">スタッフと、笑顔の</span><br>オートバイライフを。</h1>
+        <h1>レースの現場を知るスタッフと、<br>笑顔のオートバイライフを。</h1>
         <p class="hero-lead">
-          アドンバスMCは、スズキ、MVアグスタ、ロイヤルエンフィールドの新車を取り扱いながら、各種整備、車検、カスタムまで幅広く対応する宇都宮のバイクショップです。サーキットで培った視点を、街乗り、ツーリング、日々のメンテナンスへとつなげ、お客様一人ひとりのオートバイライフを支えます。
+          アドバンスMCは、スズキ、MVアグスタ、ロイヤルエンフィールドの新車を取り扱いながら、各種整備、車検、カスタムまで幅広く対応する宇都宮のバイクショップです。サーキットで培った視点を、街乗り、ツーリング、日々のメンテナンスへとつなげ、お客様一人ひとりのオートバイライフを支えます。
         </p>
+      </div>
+    </section>
+
+    <section class="news" id="news">
+      <div class="wrap">
+        <div class="section-head news-head">
+          <div>
+            <span class="section-label">NEWS</span>
+            <h2>アドバンスMCからのお知らせ</h2>
+          </div>
+        </div>
+        <div class="news-list" aria-label="最新のお知らせ">
+          <article class="news-card">
+            <time datetime="2026-06-01">2026.06.01</time>
+            <h3><a href="news/closed-days-june.html">6月の定休日のお知らせ</a></h3>
+            <p>店舗休業日、整備受付、引き取り・納車対応日の変更がある場合はこちらでご案内します。</p>
+          </article>
+          <article class="news-card">
+            <time datetime="2026-05-20">2026.05.20</time>
+            <h3><a href="news/ebisu-circuit-event.html">エビスサーキット走行会のご案内</a></h3>
+            <p>初めての方も参加しやすい走行会情報、申込方法、当日の持ち物などを掲載します。</p>
+          </article>
+          <article class="news-card">
+            <time datetime="2026-05-10">2026.05.10</time>
+            <h3><a href="news/parts-arrival.html">用品・パーツ入荷のお知らせ</a></h3>
+            <p>タイヤ、オイル、ヘルメット、カスタムパーツなど、店頭で相談できる商品情報をお届けします。</p>
+          </article>
+        </div>
+        <a class="button news-link" href="news.html">お知らせ一覧を見る</a>
       </div>
     </section>
 
@@ -943,6 +84,7 @@
               <span class="maker-tag">SUZUKI</span>
               <h3>日常と走りのバランス</h3>
               <p>街乗りからツーリング、スポーツ走行まで、長く楽しめる一台選びを支えます。</p>
+              <a class="button maker-link" href="suzuki.html">詳しくはこちら</a>
             </div>
           </article>
           <article class="maker-card">
@@ -951,6 +93,7 @@
               <span class="maker-tag">MV AGUSTA</span>
               <h3>造形と熱量を味わう</h3>
               <p>所有する喜び、眺める楽しさ、走らせる高揚感まで含めた体験として紹介します。</p>
+              <a class="button maker-link" href="mv-agusta.html">詳しくはこちら</a>
             </div>
           </article>
           <article class="maker-card">
@@ -959,6 +102,7 @@
               <span class="maker-tag">ROYAL ENFIELD</span>
               <h3>急がない楽しさ</h3>
               <p>景色、音、鼓動を味わいながら、バイクと付き合う時間を大切にする提案へ。</p>
+              <a class="button maker-link" href="royal-enfield.html">詳しくはこちら</a>
             </div>
           </article>
         </div>
@@ -966,94 +110,98 @@
     </section>
 
     <div class="partnership-link">
+      <div class="partnership-head">
+        <span>PARTS & GEAR BRANDS</span>
+        <h2>おすすめの取扱いパーツ・ブランド</h2>
+      </div>
       <div class="partnership-item">
         <button class="partnership-card is-sunstar" type="button" aria-expanded="false" aria-controls="partnership-sunstar">
           <div>
             <span>SPECIAL PARTNERSHIP</span>
             <strong>サンスター製 オートバイパーツ</strong>
-            <p>国美コマース株式会社（サンスター）製ブレーキディスクの販売・取付を中心に、信頼できる制動まわりの選択を紹介します。</p>
           </div>
           <span class="partnership-arrow" aria-hidden="true">›</span>
         </button>
-        <div class="partnership-detail" id="partnership-sunstar" hidden>
-          <img src="assets/kunimi-sunstar-banner.jpg" alt="サンスター製ブレーキディスク">
-          <div class="partnership-detail-body">
-            <h3>制動まわりを、安心して楽しめる状態へ。</h3>
-            <p>街乗りやツーリングでも、ブレーキのタッチや安心感は走る楽しさに直結します。車両や使い方に合わせて、サンスター製ブレーキディスクの販売・取付を提案します。</p>
-            <a href="kunimi-commerce-sunstar.html">詳しく見る</a>
-          </div>
-        </div>
       </div>
       <div class="partnership-item">
         <button class="partnership-card is-lubird" type="button" aria-expanded="false" aria-controls="partnership-lubird">
           <div>
             <span>SPECIAL PARTNERSHIP</span>
             <strong>ルバード（LUBIRD）エンジンオイル</strong>
-            <p>“Protect to Attack” をコンセプトに、エンジンを守ることを念頭に置いているためいかなるユーザーにも安心感を与えることができるブランドです。</p>
           </div>
           <span class="partnership-arrow" aria-hidden="true">›</span>
         </button>
-        <div class="partnership-detail" id="partnership-lubird" hidden>
-          <img src="assets/lubird-engine-oil-banner.jpg" alt="ルバードエンジンオイル">
-          <div class="partnership-detail-body">
-            <h3>エンジンを守ることから、走る気持ちよさを考える。</h3>
-            <p>日常の街乗りからスポーツ走行まで、使い方に合わせたオイル選びはバイクとの付き合い方を変えます。交換時期や走行環境も含めて相談できます。</p>
-            <a href="lubird-engine-oil.html">詳しく見る</a>
-          </div>
-        </div>
       </div>
       <div class="partnership-item">
         <button class="partnership-card is-dunlop" type="button" aria-expanded="false" aria-controls="partnership-dunlop">
           <div>
             <span>SPECIAL PARTNERSHIP</span>
             <strong>ダンロップタイヤ</strong>
-            <p>ダンロップは、街乗りからツーリング、スポーツ走行、アドベンチャー、オフロードまで対応する、二輪タイヤのフルラインナップブランドです。</p>
           </div>
           <span class="partnership-arrow" aria-hidden="true">›</span>
         </button>
-        <div class="partnership-detail" id="partnership-dunlop" hidden>
-          <img src="assets/dunlop-tire-banner.jpg" alt="ダンロップ二輪タイヤ">
-          <div class="partnership-detail-body">
-            <h3>走り方に合わせて、タイヤの選択肢を広げる。</h3>
-            <p>ツーリング、スポーツ走行、アドベンチャー、オフロードまで、タイヤは一台の性格を大きく左右します。走る場所とペースに合わせて選びます。</p>
-            <a href="dunlop-motorcycle-tire.html">詳しく見る</a>
-          </div>
-        </div>
-      </div>
-      <div class="partnership-item">
-        <button class="partnership-card is-ogk" type="button" aria-expanded="false" aria-controls="partnership-ogk">
-          <div>
-            <span>SPECIAL PARTNERSHIP</span>
-            <strong>OGK KABUTO</strong>
-            <p>日本人に合うかぶり心地と、レースにも対応する安全・空力性能を両立した国産ヘルメットブランドです。街乗りからツーリング、スポーツ走行まで、快適で安心なライディングを支えます。</p>
-          </div>
-          <span class="partnership-arrow" aria-hidden="true">›</span>
-        </button>
-        <div class="partnership-detail" id="partnership-ogk" hidden>
-          <img src="assets/hero-slide-3.jpg" alt="ヘルメットとライディング用品の提案">
-          <div class="partnership-detail-body">
-            <h3>かぶり心地と安心感を、ライディングの土台に。</h3>
-            <p>ヘルメットは安全性だけでなく、長時間の快適さや視界、空力も大切です。街乗りからスポーツ走行まで、使い方に合う選択を支えます。</p>
-            <a href="ogk-kabuto.html">詳しく見る</a>
-          </div>
-        </div>
       </div>
       <div class="partnership-item">
         <button class="partnership-card is-ek" type="button" aria-expanded="false" aria-controls="partnership-ek">
           <div>
             <span>SPECIAL PARTNERSHIP</span>
             <strong>EKチェーン</strong>
-            <p>シールチェーンのパイオニアとして知られる国産ドライブチェーンブランドです。街乗りからツーリング、スポーツ走行まで、駆動まわりの安心感と気持ちよい走りを支えます。</p>
           </div>
           <span class="partnership-arrow" aria-hidden="true">›</span>
         </button>
-        <div class="partnership-detail" id="partnership-ek" hidden>
-          <img src="assets/hero-slide-4.jpg" alt="ドライブチェーンと駆動まわりの整備提案">
-          <div class="partnership-detail-body">
-            <h3>駆動まわりを整えて、走りの気持ちよさを保つ。</h3>
-            <p>チェーンはエンジンの力を後輪へ伝える大切な部品です。摩耗や張り、給油状態まで含めて確認し、車両や走り方に合うチェーン選びと交換を提案します。</p>
-            <a href="ek-chain.html">詳しく見る</a>
+      </div>
+      <div class="partnership-item">
+        <button class="partnership-card is-ogk" type="button" aria-expanded="false" aria-controls="partnership-ogk">
+          <div>
+            <span>SPECIAL PARTNERSHIP</span>
+            <strong>OGK KABUTO</strong>
           </div>
+          <span class="partnership-arrow" aria-hidden="true">›</span>
+        </button>
+      </div>
+      <div class="partnership-detail" id="partnership-sunstar" hidden>
+        <img src="assets/kunimi-sunstar-banner.jpg" alt="サンスター製ブレーキディスク">
+        <div class="partnership-detail-body">
+          <h3>制動まわりを、安心して楽しめる状態へ。</h3>
+          <p>街乗りやツーリングでも、ブレーキのタッチや安心感は走る楽しさに直結します。車両や使い方に合わせて、サンスター製ブレーキディスクの販売・取付を提案します。</p>
+          <p>純正交換だけでなく、使用環境、走行距離、パッドとの相性、今後のメンテナンス性まで確認しながら、無理のないアップデートとして案内します。</p>
+          <a class="button partnership-detail-link" href="kunimi-commerce-sunstar.html">詳しくはこちら</a>
+        </div>
+      </div>
+      <div class="partnership-detail" id="partnership-lubird" hidden>
+        <img src="assets/lubird-engine-oil-banner.jpg" alt="ルバードエンジンオイル">
+        <div class="partnership-detail-body">
+          <h3>エンジンを守ることから、走る気持ちよさを考える。</h3>
+          <p>日常の街乗りからスポーツ走行まで、使い方に合わせたオイル選びはバイクとの付き合い方を変えます。交換時期や走行環境も含めて相談できます。</p>
+          <p>通勤、ツーリング、サーキット走行など、熱の入り方や回転域は人によって異なります。車両状態を見ながら、安心して続けられる交換サイクルも含めて提案します。</p>
+          <a class="button partnership-detail-link" href="lubird-engine-oil.html">詳しくはこちら</a>
+        </div>
+      </div>
+      <div class="partnership-detail" id="partnership-dunlop" hidden>
+        <img src="assets/dunlop-tire-banner.jpg" alt="ダンロップ二輪タイヤ">
+        <div class="partnership-detail-body">
+          <h3>走り方に合わせて、タイヤの選択肢を広げる。</h3>
+          <p>ツーリング、スポーツ走行、アドベンチャー、オフロードまで、タイヤは一台の性格を大きく左右します。走る場所とペースに合わせて選びます。</p>
+          <p>グリップ、ライフ、雨天時の安心感、乗り心地のバランスを確認し、今の使い方に合う銘柄を一緒に絞り込みます。交換後の空気圧管理も含めて相談できます。</p>
+          <a class="button partnership-detail-link" href="dunlop-motorcycle-tire.html">詳しくはこちら</a>
+        </div>
+      </div>
+      <div class="partnership-detail" id="partnership-ek" hidden>
+        <img src="assets/hero-slide-4.jpg" alt="ドライブチェーンと駆動まわりの整備提案">
+        <div class="partnership-detail-body">
+          <h3>駆動まわりを整えて、走りの気持ちよさを保つ。</h3>
+          <p>チェーンはエンジンの力を後輪へ伝える大切な部品です。摩耗や張り、給油状態まで含めて確認し、車両や走り方に合うチェーン選びと交換を提案します。</p>
+          <p>スプロケットの摩耗、清掃・給油の頻度、走行音や加減速時の違和感も確認しながら、駆動系全体で気持ちよく走れる状態を整えます。</p>
+          <a class="button partnership-detail-link" href="ek-chain.html">詳しくはこちら</a>
+        </div>
+      </div>
+      <div class="partnership-detail" id="partnership-ogk" hidden>
+        <img src="assets/ogk-kabuto-slide.jpg" alt="ヘルメットとライディング用品の提案">
+        <div class="partnership-detail-body">
+          <h3>かぶり心地と安心感を、ライディングの土台に。</h3>
+          <p>ヘルメットは安全性だけでなく、長時間の快適さや視界、空力も大切です。街乗りからスポーツ走行まで、使い方に合う選択を支えます。</p>
+          <p>サイズ感、頬まわりのフィット、メガネやインカムとの相性など、実際の使い勝手も大切にしながら、無理なく使い続けられる一品を案内します。</p>
+          <a class="button partnership-detail-link" href="ogk-kabuto.html">詳しくはこちら</a>
         </div>
       </div>
     </div>
@@ -1067,13 +215,18 @@
         </div>
         <div class="story-body">
           <span class="section-label">ABOUT ADVANCE MC</span>
-          <h2>モノを買うだけではなく、この店で選ぶ意味まで楽しむ。</h2>
+          <h2>走りを知る店で、納得できる一台を選ぶ。</h2>
           <p>
-            バイク、用品、パーツ、整備。どれも大切ですが、アドバンスMCが届けたいのは価格だけでは測れない体験です。
+            気になる車両がある。<br>
+            今のバイクをもっと乗りやすくしたい。<br>
+            用品やパーツを選びたい。<br>
+            整備や車検を相談したい。
           </p>
           <p>
-            レースやサーキットの現場を知るスタッフが、ブレーキ、タイヤ、オイル、足まわりを見る。その視点は、限界まで攻めるためだけではなく、街乗りやツーリングを気持ちよく、安心して続けるためにも生きています。
+            アドバンスMCは、そんな日々の相談からお付き合いできるバイクショップです。<br>
+            お客様の使い方や好みに合わせて、車両選びからメンテナンス、カスタムまで丁寧にサポートします。
           </p>
+          <a class="button story-link" href="#concept">アドンバンスMCについてはこちら</a>
         </div>
       </div>
     </section>
@@ -1083,10 +236,10 @@
         <div class="customization-head">
           <div>
             <span class="section-label">CUSTOMIZATION</span>
-            <h2>カスタム</h2>
+            <h2>カスタム・整備・修理</h2>
           </div>
         </div>
-        <a class="custom-link-panel" href="#custom">
+        <a class="custom-link-panel" href="#parts">
           <img src="assets/customization-main.jpg" alt="カスタム作業中のオートバイ">
           <div class="custom-link-content">
             <strong>あなたらしい一台へ。</strong>
@@ -1095,9 +248,37 @@
               見た目の変化だけでなく、乗りやすさ、安心感、走る楽しさまで含めて、一台の個性を整えていく。<br>
               アドバンスMCでは、国家資格を持つ整備士が車両の安全性を見極めながら、確かな作業であなたらしいオートバイライフを支えます。
             </p>
-            <span>カスタムについてはこちら</span>
+            <span class="button custom-link-button">カスタム・整備・修理についてはこちら</span>
           </div>
         </a>
+        <div class="custom-thumbnail-loop" aria-label="カスタムされたバイクのイメージ">
+          <div class="custom-thumbnail-track">
+            <img src="assets/custom-fb-1.jpg" alt="アドバンスMCのカスタムバイク写真">
+            <img src="assets/custom-fb-2.jpg" alt="アドバンスMCのカスタムバイク写真">
+            <img src="assets/custom-fb-3.jpg" alt="アドバンスMCのカスタムバイク写真">
+            <img src="assets/custom-fb-4.jpg" alt="アドバンスMCのカスタムバイク写真">
+            <img src="assets/custom-fb-5.jpg" alt="アドバンスMCのカスタムバイク写真">
+            <img src="assets/custom-fb-6.jpg" alt="アドバンスMCのカスタムバイク写真">
+            <img src="assets/custom-loop-1.jpg" alt="カスタムされたカフェレーサーの全体像">
+            <img src="assets/custom-loop-2.jpg" alt="カスタムされたバイクのサイドビュー">
+            <img src="assets/custom-loop-3.jpg" alt="クラシックなカスタムバイクの全体像">
+            <img src="assets/custom-loop-4.jpg" alt="カフェレーサースタイルのバイク">
+            <img src="assets/custom-loop-5.jpg" alt="カスタムバイクの横姿">
+            <img src="assets/custom-loop-6.jpg" alt="レーサー仕様のクラシックバイク">
+            <img src="assets/custom-fb-1.jpg" alt="" aria-hidden="true">
+            <img src="assets/custom-fb-2.jpg" alt="" aria-hidden="true">
+            <img src="assets/custom-fb-3.jpg" alt="" aria-hidden="true">
+            <img src="assets/custom-fb-4.jpg" alt="" aria-hidden="true">
+            <img src="assets/custom-fb-5.jpg" alt="" aria-hidden="true">
+            <img src="assets/custom-fb-6.jpg" alt="" aria-hidden="true">
+            <img src="assets/custom-loop-1.jpg" alt="" aria-hidden="true">
+            <img src="assets/custom-loop-2.jpg" alt="" aria-hidden="true">
+            <img src="assets/custom-loop-3.jpg" alt="" aria-hidden="true">
+            <img src="assets/custom-loop-4.jpg" alt="" aria-hidden="true">
+            <img src="assets/custom-loop-5.jpg" alt="" aria-hidden="true">
+            <img src="assets/custom-loop-6.jpg" alt="" aria-hidden="true">
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1112,13 +293,13 @@
         <div class="staff-grid">
           <article class="staff-card">
             <figure class="staff-photo">
-              <img src="assets/staff-inose.jpg" alt="社長 猪瀬の仮顔写真">
+              <img src="assets/staff-inose.jpg?v=20260610" alt="社長 猪瀬の顔写真">
             </figure>
             <div class="staff-profile">
               <span class="staff-role">社長</span>
               <h3>猪瀬</h3>
               <ul>
-                <li>アドバンスMC株式会社代表取締役</li>
+                <li>アドバンスMC株式会社 代表取締役</li>
                 <li>二輪車安全運転特別指導員</li>
                 <li>安全運転講習（グッドライダーミーティング）でのインストラクターとしての活動多数</li>
               </ul>
@@ -1126,7 +307,7 @@
           </article>
           <article class="staff-card">
             <figure class="staff-photo">
-              <img src="assets/staff-yoshii.jpg" alt="店長 吉井の仮顔写真">
+              <img src="assets/staff-yoshii.jpg?v=20260610" alt="店長 吉井の顔写真">
             </figure>
             <div class="staff-profile">
               <span class="staff-role">店長</span>
@@ -1140,7 +321,7 @@
           </article>
           <article class="staff-card">
             <figure class="staff-photo">
-              <img src="assets/staff-kogure.jpg" alt="メカニック 小暮の仮顔写真">
+              <img src="assets/staff-kogure.jpg?v=20260610" alt="メカニック 小暮の顔写真">
             </figure>
             <div class="staff-profile">
               <span class="staff-role">メカニック</span>
@@ -1152,6 +333,26 @@
             </div>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="used-bikes" id="used-bikes">
+      <div class="wrap used-bikes-layout">
+        <div>
+          <span class="section-label">USED MOTORCYCLES</span>
+          <h2>中古車販売</h2>
+          <p>
+            店頭の中古車在庫はGooBikeに掲載しています。気になる車両があれば、状態確認、見積り、納車整備、追加カスタムまでお気軽にご相談ください。
+          </p>
+        </div>
+        <a class="used-bikes-panel" href="https://www.goobike.com/shop/client_8400844/zaiko.html" target="_blank" rel="noopener">
+          <span>STOCK LIST</span>
+          <strong>今ある一台から、次のバイクライフへ。</strong>
+          <p>
+            乗り出し前の整備や消耗品の確認まで、ショップ目線で相談できます。最新の在庫状況は外部在庫ページでご確認ください。
+          </p>
+          <span class="button used-bikes-link">中古車在庫をGooBikeで見る</span>
+        </a>
       </div>
     </section>
 
@@ -1199,6 +400,15 @@
       </div>
     </section>
 
+    <section class="race-activity" id="race" aria-label="アドバンスMCのレース活動">
+      <a class="race-activity-band" href="#race">
+        <img src="assets/race-activity-main.jpg" alt="アドバンスMCのレース活動">
+        <span>RACE ACTIVITY</span>
+        <strong>アドバンスMCのレース活動</strong>
+        <span class="button race-activity-link">レース活動についてはこちら</span>
+      </a>
+    </section>
+
     <footer class="site-footer">
       <div class="wrap footer-inner">
         <div>
@@ -1206,6 +416,26 @@
           <p class="footer-copy">
             レースの現場を知るスタッフと、笑顔のオートバイライフを。
           </p>
+          <div class="footer-social" aria-label="SNSリンク">
+            <a href="https://x.com/advancemc4ce?lang=ja" target="_blank" rel="noopener">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M17.8 3h3.1l-6.8 7.8L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.3-8.4L2 3h6.3l4.4 5.9L17.8 3Zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5Z"/>
+              </svg>
+              X
+            </a>
+            <a href="https://www.instagram.com/advance_mc/" target="_blank" rel="noopener">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M7.2 2.5h9.6a4.7 4.7 0 0 1 4.7 4.7v9.6a4.7 4.7 0 0 1-4.7 4.7H7.2a4.7 4.7 0 0 1-4.7-4.7V7.2a4.7 4.7 0 0 1 4.7-4.7Zm0 2A2.7 2.7 0 0 0 4.5 7.2v9.6a2.7 2.7 0 0 0 2.7 2.7h9.6a2.7 2.7 0 0 0 2.7-2.7V7.2a2.7 2.7 0 0 0-2.7-2.7H7.2Zm4.8 3.3a4.2 4.2 0 1 1 0 8.4 4.2 4.2 0 0 1 0-8.4Zm0 2a2.2 2.2 0 1 0 0 4.4 2.2 2.2 0 0 0 0-4.4Zm5.2-2.6a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/>
+              </svg>
+              Instagram
+            </a>
+            <a href="https://www.facebook.com/advancemc?locale=ja_JP" target="_blank" rel="noopener">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M14 8.1V6.6c0-.7.5-.9 1-.9h2.6V2.2L14.5 2c-3.1 0-4.8 1.9-4.8 5v1.1H6.6v3.9h3.1V22H14v-10h3.2l.5-3.9H14Z"/>
+              </svg>
+              Facebook
+            </a>
+          </div>
         </div>
         <dl class="footer-info">
           <div>
@@ -1242,29 +472,6 @@
     </footer>
   </main>
 
-  <script>
-    const heroSlides = document.querySelectorAll(".hero-slide");
-    let heroSlideIndex = 0;
-
-    if (heroSlides.length > 1) {
-      setInterval(() => {
-        heroSlides[heroSlideIndex].classList.remove("is-active");
-        heroSlideIndex = (heroSlideIndex + 1) % heroSlides.length;
-        heroSlides[heroSlideIndex].classList.add("is-active");
-      }, 6000);
-    }
-
-    const partnershipButtons = document.querySelectorAll(".partnership-card[aria-controls]");
-
-    partnershipButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const panel = document.getElementById(button.getAttribute("aria-controls"));
-        const willOpen = button.getAttribute("aria-expanded") !== "true";
-
-        button.setAttribute("aria-expanded", String(willOpen));
-        panel.hidden = !willOpen;
-      });
-    });
-  </script>
+  <script src="assets/site.js"></script>
 </body>
 </html>

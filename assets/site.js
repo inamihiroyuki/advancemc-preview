@@ -9,6 +9,40 @@ if (heroSlides.length > 1) {
   }, 6000);
 }
 
+const siteHeader = document.querySelector(".site-header");
+const menuToggle = document.querySelector(".menu-toggle");
+const siteNav = document.querySelector("#site-nav");
+
+const closeSiteMenu = () => {
+  if (!siteHeader || !menuToggle) {
+    return;
+  }
+
+  siteHeader.classList.remove("is-menu-open");
+  menuToggle.setAttribute("aria-expanded", "false");
+  menuToggle.setAttribute("aria-label", "メニューを開く");
+};
+
+if (siteHeader && menuToggle && siteNav) {
+  menuToggle.addEventListener("click", () => {
+    const willOpen = menuToggle.getAttribute("aria-expanded") !== "true";
+
+    siteHeader.classList.toggle("is-menu-open", willOpen);
+    menuToggle.setAttribute("aria-expanded", String(willOpen));
+    menuToggle.setAttribute("aria-label", willOpen ? "メニューを閉じる" : "メニューを開く");
+  });
+
+  siteNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeSiteMenu);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeSiteMenu();
+    }
+  });
+}
+
 const partnershipButtons = document.querySelectorAll(".partnership-card[aria-controls]");
 const partnershipMobileQuery = window.matchMedia("(max-width: 920px)");
 

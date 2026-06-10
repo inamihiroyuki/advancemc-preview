@@ -38,6 +38,19 @@ a {
   text-decoration: none;
 }
 
+a[target="_blank"]::after,
+.used-bikes-link::after {
+  content: "↗";
+  margin-left: .38em;
+  font-size: .88em;
+  line-height: 1;
+}
+
+a.used-bikes-panel[target="_blank"]::after,
+.footer-social a::after {
+  content: none;
+}
+
 .site-header {
   position: fixed;
   z-index: 20;

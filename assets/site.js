@@ -10,6 +10,23 @@ if (heroSlides.length > 1) {
 }
 
 const partnershipButtons = document.querySelectorAll(".partnership-card[aria-controls]");
+const partnershipMobileQuery = window.matchMedia("(max-width: 920px)");
+
+const placePartnershipPanel = (button, panel) => {
+  const item = button.closest(".partnership-item");
+  const container = button.closest(".partnership-link");
+
+  if (!item || !container) {
+    return;
+  }
+
+  if (partnershipMobileQuery.matches) {
+    item.insertAdjacentElement("afterend", panel);
+    return;
+  }
+
+  container.appendChild(panel);
+};
 
 const closePartnershipPanel = (button, panel) => {
   button.setAttribute("aria-expanded", "false");
@@ -22,6 +39,7 @@ const closePartnershipPanel = (button, panel) => {
 };
 
 const openPartnershipPanel = (button, panel) => {
+  placePartnershipPanel(button, panel);
   button.setAttribute("aria-expanded", "true");
   panel.hidden = false;
   panel.style.maxHeight = "0px";
@@ -77,3 +95,21 @@ partnershipButtons.forEach((button) => {
     panel.hidden = true;
   });
 });
+
+const repositionOpenPartnershipPanel = () => {
+  const openButton = [...partnershipButtons].find((button) => button.getAttribute("aria-expanded") === "true");
+
+  if (!openButton) {
+    return;
+  }
+
+  const panel = document.getElementById(openButton.getAttribute("aria-controls"));
+
+  if (!panel) {
+    return;
+  }
+
+  placePartnershipPanel(openButton, panel);
+};
+
+partnershipMobileQuery.addEventListener("change", repositionOpenPartnershipPanel);

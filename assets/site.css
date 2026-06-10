@@ -789,6 +789,19 @@ h3 {
   object-fit: cover;
 }
 
+.maker-image-link {
+  display: block;
+  overflow: hidden;
+}
+
+.maker-image-link img {
+  transition: transform .28s ease;
+}
+
+.maker-image-link:hover img {
+  transform: scale(1.04);
+}
+
 .maker-card div {
   padding: 18px;
 }
@@ -1695,6 +1708,7 @@ h3 {
   .partnership-card,
   .partnership-card .partnership-arrow,
   .partnership-detail,
+  .maker-image-link img,
   .custom-thumbnail-track {
     transition: none;
     animation: none;

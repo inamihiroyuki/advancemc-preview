@@ -1572,10 +1572,29 @@ h3 {
 
   .partnership-detail {
     grid-template-columns: 1fr;
+    background: #fffdf8;
+    border: 1px solid rgba(31, 37, 40, .1);
   }
 
   .partnership-detail img {
     min-height: 220px;
+  }
+
+  .partnership-detail-body {
+    gap: 14px;
+    padding: 24px 20px 26px;
+  }
+
+  .partnership-detail-body h3 {
+    color: var(--ink);
+    font-size: 22px;
+  }
+
+  .partnership-detail-body p {
+    color: #354047;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.9;
   }
 
   .news-list,

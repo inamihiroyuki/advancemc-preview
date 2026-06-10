@@ -1174,8 +1174,12 @@ h3 {
     padding-bottom: 58px;
   }
 
-  h1 {
-    font-size: 36px;
+  h1,
+  h2,
+  .used-bikes-panel strong,
+  .custom-link-content strong,
+  .race-activity-band strong {
+    font-size: 25px;
   }
 
   .hero-slide {
